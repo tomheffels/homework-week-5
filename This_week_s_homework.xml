@@ -25,20 +25,20 @@ Initialize a Node.JS project in the repository directory so you can install and 
 
 ## 2. Connect to PostgreSQL with `node-postgres`.
 
-1. Create a new JS file named `sql-statements.js`.
-1. Make sure you have a PostgreSQL server running, otherwise you won't be able to run the code you're about to write.
-1. Connect to the database using an instance of `Pool` (part of the `pg` package).
-1. The connection string for your local Postgres will point to `localhost` and that should be used as a default, but now you should also make sure that the connection string can be configured with an environment variable. If the `process.env.DATABASE_URL` environment variable is set, your code should use that instead of the default `localhost` connection string.
-1. In your code, using the `pool`, run the following SQL statement:
+<!-- 1. Create a new JS file named `sql-statements.js`. -->
+<!-- 1. Make sure you have a PostgreSQL server running, otherwise you won't be able to run the code you're about to write. -->
+<!-- 1. Connect to the database using an instance of `Pool` (part of the `pg` package). -->
+<!-- 1. The connection string for your local Postgres will point to `localhost` and that should be used as a default, but now you should also make sure that the connection string can be configured with an environment variable. If the `process.env.DATABASE_URL` environment variable is set, your code should use that instead of the default `localhost` connection string. -->
+<!-- 1. In your code, using the `pool`, run the following SQL statement:
    ```sql
    CREATE TABLE IF NOT EXISTS person (id serial, first_name varchar(255), last_name varchar(255), eye_color varchar(255))
-   ```
-1. Next, after the previous query completes, insert several rows into the `person` table to represent the following people:
+   ``` -->
+<!-- 1. Next, after the previous query completes, insert several rows into the `person` table to represent the following people:
    - James Smith (brown eyes)
    - Frank Jones (brown eyes)
    - Rebecca Andrews (blue eyes)
    
-   Make sure to use a parameterized query.
+   Make sure to use a parameterized query. -->
 1. Next, after the previous query completes, run an `UPDATE` statement that will change every row with the `eye_color` value of `brown` to `blue`.
 1. Next, after the previous query (or queries) complete, use the following statement in your program, but fix it first. Change it so that it uses parameterized queries instead of string concatenation.
    ```javascript
