@@ -50,19 +50,19 @@ Initialize a Node.JS project in the repository directory so you can install and 
 
 ## 3. Use Sequelize to build a REST API.
 
-1. Create a new JS file named `sequelize-rest.js`.
-1. Install the dependency `sequelize@5.8.6`
-1. In your code, initialize the database connection with Sequelize the way you've learned.
-1. Using Sequelize, define a model called `Movie` and make sure it has the following properties (in addition to an ID):
+<!-- 1. Create a new JS file named `sequelize-rest.js`. -->
+<!-- 1. Install the dependency `sequelize@5.8.6` -->
+<!-- 1. In your code, initialize the database connection with Sequelize the way you've learned. -->
+<!-- 1. Using Sequelize, define a model called `Movie` and make sure it has the following properties (in addition to an ID):
    - `title` (text)
    - `yearOfRelease` (number)
-   - `synopsis` (text)
+   - `synopsis` (text) -->
 1. Create an express app with routes that support the following RESTful actions on the "movies" resources.
-   - _create_ a new movie resource
+   <!-- - _create_ a new movie resource -->
    - _read_ a single movie resource
    - _update_ a single movie resource
    - _delete_ a single movie resource
-   - _read_ all movies (the entire collections resource)
+   <!-- - _read_ all movies (the entire collections resource) -->
    
-   Remember that you've done this before. Don't re-invent the wheel.
-1. Implement pagination on the "read all" collections resource end-point. Meaning, the user can pass `limit` and `offset` query parameters to limit the number of results.
+   <!-- Remember that you've done this before. Don't re-invent the wheel. -->
+<!-- 1. Implement pagination on the "read all" collections resource end-point. Meaning, the user can pass `limit` and `offset` query parameters to limit the number of results. -->
