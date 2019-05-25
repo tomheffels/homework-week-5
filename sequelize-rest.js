@@ -37,26 +37,40 @@ app.get('/movies', (req, res, next) => {
   Movie.findAll({
       limit, offset
     })
-  .then(movies => {
-    res.json(movies)
-  })
+  .then(movies => res.json(movies))
   .catch(err => next(err))
 })
 
 app.get('/movies/:id', (req, res, next) => {
   const id = req.params.id
-  Movie.
-  res.json(`Read movie ${id}`)
+  Movie.findOne(req.body.id)
+  .then(movie => res.json(movie))
+  .catch(err => next(err))
 })
 
 app.put('/movies/:id', (req, res, next) => {
   const id = req.params.id
-  res.json(`Updated movie ${id}`)
+  const {title, yearOfRelease, synopsis} = req.body
+  Movie.update({
+    title: title,
+    yearOfRelease: yearOfRelease,
+    synopsis: synopsis,
+  }, {
+    where: {
+      id: id
+    }
+  })
+  .then(res.json(`Updated movie with id ${id}`))
+  .catch(err => next(error))
 })
 
 app.delete('/movies/:id', (req, res, next) => {
   const id = req.params.id
-  res.json(`Deleted movie ${id}`)
+  Movie.destroy({where: {
+    id: id
+  }})
+  .then(res.json(`Deleted movie with id ${id}`))
+  .catch(err => next(err))
 })
 
 

@@ -57,11 +57,11 @@ Initialize a Node.JS project in the repository directory so you can install and 
    - `title` (text)
    - `yearOfRelease` (number)
    - `synopsis` (text) -->
-1. Create an express app with routes that support the following RESTful actions on the "movies" resources.
+<!-- 1. Create an express app with routes that support the following RESTful actions on the "movies" resources. -->
    <!-- - _create_ a new movie resource -->
-   - _read_ a single movie resource
-   - _update_ a single movie resource
-   - _delete_ a single movie resource
+   <!-- - _read_ a single movie resource -->
+   <!-- - _update_ a single movie resource -->
+   <!-- - _delete_ a single movie resource -->
    <!-- - _read_ all movies (the entire collections resource) -->
    
    <!-- Remember that you've done this before. Don't re-invent the wheel. -->
