@@ -39,14 +39,14 @@ Initialize a Node.JS project in the repository directory so you can install and 
    - Rebecca Andrews (blue eyes)
    
    Make sure to use a parameterized query. -->
-1. Next, after the previous query completes, run an `UPDATE` statement that will change every row with the `eye_color` value of `brown` to `blue`.
-1. Next, after the previous query (or queries) complete, use the following statement in your program, but fix it first. Change it so that it uses parameterized queries instead of string concatenation.
+<!-- 1. Next, after the previous query completes, run an `UPDATE` statement that will change every row with the `eye_color` value of `brown` to `blue`. -->
+<!-- 1. Next, after the previous query (or queries) complete, use the following statement in your program, but fix it first. Change it so that it uses parameterized queries instead of string concatenation.
    ```javascript
    const name = "James";
    pool.query('SELECT * FROM "person" WHERE first_name = ' + name)
-   ```
-1. Print the results of the previous query to the console.
-1. If at any point one of the chained promises rejects, you should catch the error and print it to the log.
+   ``` -->
+<!-- 1. Print the results of the previous query to the console. -->
+<!-- 1. If at any point one of the chained promises rejects, you should catch the error and print it to the log. -->
 
 ## 3. Use Sequelize to build a REST API.
 
