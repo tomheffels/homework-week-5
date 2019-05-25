@@ -1,11 +1,6 @@
+// Sequelize Model
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize('postgres://postgres:secret@localhost:5432/postgres', {define: { timestamps: false }})
-
-
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
-const port = 3000
 
 const Movie = sequelize.define('movies', {
   title: {
@@ -22,32 +17,44 @@ const Movie = sequelize.define('movies', {
 
 Movie.sync()
 
+// Express REST API
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const port = 3000
+
+app.listen (port, () => console.log(`API listening on port ${port}`))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => res.redirect('/movies'))
-
+// C(reate)
 app.post('/movies', (req, res, next) => {
   Movie.create(req.body)
     .then(movie => res.json(movie))
 })
 
+// R(ead)
 app.get('/movies', (req, res, next) => {
   const limit = req.query.limit || 10
   const offset = req.query.offset || 0
   Movie.findAll({
-      limit, offset
-    })
+    limit, offset
+  })
   .then(movies => res.json(movies))
   .catch(err => next(err))
 })
 
 app.get('/movies/:id', (req, res, next) => {
   const id = req.params.id
-  Movie.findOne(req.body.id)
+  Movie.findOne({
+    where: {
+      id: id
+    }
+  })
   .then(movie => res.json(movie))
   .catch(err => next(err))
 })
 
+// U(pdate)
 app.put('/movies/:id', (req, res, next) => {
   const id = req.params.id
   const {title, yearOfRelease, synopsis} = req.body
@@ -64,15 +71,14 @@ app.put('/movies/:id', (req, res, next) => {
   .catch(err => next(error))
 })
 
+// D(elete)
 app.delete('/movies/:id', (req, res, next) => {
   const id = req.params.id
-  Movie.destroy({where: {
-    id: id
-  }})
+  Movie.destroy({
+    where: {
+      id: id
+    }
+  })
   .then(res.json(`Deleted movie with id ${id}`))
   .catch(err => next(err))
 })
-
-
-
-app.listen (port, () => console.log(`API listening on port ${port}`))
